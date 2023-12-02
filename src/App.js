@@ -1,11 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Temp from "./components/Temp";
 
 function App() {
   return (
     <div className="container">
-      <h1>0°</h1>
-      <h2>chilly</h2>
+      <Temp />
     </div>
   );
 }

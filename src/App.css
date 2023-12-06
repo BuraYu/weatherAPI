@@ -1,3 +1,7 @@
+.root {
+  background-color: rgb(234, 133, 0);
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +38,140 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.activityList {
+  list-style-type: none;
+}
+
+.listElement {
+  margin: 5px;
+}
+
+.ul-li-container {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #8c0cdb solid 3px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: border 0.4s;
+}
+
+.ul-li-container:hover {
+  border: #db210c solid 3px;
+}
+
+.listElement:hover::before {
+  content: "✕";
+  font-weight: bold;
+  position: absolute;
+  left: 100%;
+  margin-left: 5px;
+  color: red;
+  font-size: 18px;
+}
+
+.img-weather {
+  width: 20%;
+  height: 20%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-header {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+li {
+  text-shadow: rgb(225, 237, 8) 1px 0 10px;
+}
+
+input[type="text"] {
+  border: 3px solid rgb(141, 2, 141);
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  transform: scale(3);
+  margin: 15px;
+  color: aqua;
+}
+button {
+  position: relative;
+  margin-top: 4px;
+
+  color: var(--textColor2);
+  border-radius: 26px;
+  background-image: linear-gradient(
+    90deg,
+    #0065ff,
+    #6942ef,
+    #6554c0,
+    #008cff,
+    #0065ff,
+    #6942ef
+  );
+  background-size: 400%;
+  background-position: 0% 0%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 26px;
+    background-image: linear-gradient(
+      90deg,
+      #0065ff,
+      #6942ef,
+      #6554c0,
+      #008cff,
+      #0065ff,
+      #6942ef
+    );
+    background-size: 500%;
+    background-position: 0% 0%;
+    filter: blur(10px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.2s;
+  }
+
+  &:hover {
+    animation: gradientRotate 2s infinite;
+    &::before {
+      opacity: 1;
+      animation: gradientRotate 2s infinite;
+    }
+  }
+
+  &:active {
+    color: #c3c4d5;
+  }
+
+  &:focus {
+    &::before {
+      opacity: 1;
+    }
   }
 }
